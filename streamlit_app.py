@@ -6,7 +6,7 @@ from github import Github
 from github import InputGitTreeElement
 from datetime import datetime
 
-input_dir = 'DATA' 
+input_dir = 'DATA2' 
 csv_file = 'questionnaire.csv'
 # this can be 'seed' or 'target'
 quest_type = 'seed'
@@ -123,6 +123,8 @@ def main():
     for i in df.itertuples():
     
         idx,shortQ,longQ,unit,scale,minVal,maxVal,realization,question = i[0:9]
+        minVal = float(minVal)
+        maxVal = float(maxVal)
         
         if ( question == quest_type):
 
